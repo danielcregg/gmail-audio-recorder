@@ -5,9 +5,11 @@
 **Voice messages with live transcription for Gmail**
 
 [![CI](https://github.com/danielcregg/gmail-audio-recorder/actions/workflows/ci.yml/badge.svg)](https://github.com/danielcregg/gmail-audio-recorder/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/danielcregg/gmail-audio-recorder?logo=github&color=blue)](https://github.com/danielcregg/gmail-audio-recorder/releases/latest)
 [![Tests](https://img.shields.io/badge/tests-88%20passed-brightgreen?logo=jest)](https://github.com/danielcregg/gmail-audio-recorder/actions)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen?logo=jest)](https://github.com/danielcregg/gmail-audio-recorder/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/danielcregg/gmail-audio-recorder/blob/main/LICENSE)
+[![Chrome Web Store](https://img.shields.io/badge/chrome-web%20store-4285f4?logo=googlechrome&logoColor=white)](https://github.com/danielcregg/gmail-audio-recorder#install)
 [![Manifest V3](https://img.shields.io/badge/manifest-v3-4285f4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/danielcregg/gmail-audio-recorder/pulls)
@@ -61,7 +63,7 @@ Every other voice message extension for Gmail either charges a subscription, cap
 
 ### Manual install
 
-1. Download the [latest release](https://github.com/danielcregg/gmail-audio-recorder/archive/refs/heads/main.zip) and unzip it
+1. Download [`gmail-audio-recorder-v1.0.0.zip`](https://github.com/danielcregg/gmail-audio-recorder/releases/latest) from the latest release
 2. Open `chrome://extensions/` in Chrome
 3. Enable **Developer mode** (toggle in top-right)
 4. Click **Load unpacked** and select the unzipped folder
