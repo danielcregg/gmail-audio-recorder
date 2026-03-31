@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Gmail Audio Recorder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --surface: #131825;
+      --border: #252d42;
+      --text: #e4e8f1;
+      --text-muted: #7a84a0;
+      --accent: #4285f4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .updated {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    p, ul {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      color: var(--text);
+      margin-bottom: 0;
+    }
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 31 March 2026</p>
+
+    <div class="highlight-box">
+      <p><strong>Gmail Audio Recorder does not collect, store, transmit, or share any user data. Period.</strong></p>
+    </div>
+
+    <h2>Overview</h2>
+    <p>Gmail Audio Recorder is a Chrome extension that allows users to record voice messages and attach them to emails in Gmail. This privacy policy explains what data the extension accesses and how it is handled.</p>
+
+    <h2>Data Collection</h2>
+    <p>Gmail Audio Recorder collects <strong>no data whatsoever</strong>. Specifically:</p>
+    <ul>
+      <li>No personal information is collected</li>
+      <li>No audio recordings are transmitted to any server</li>
+      <li>No transcription data is sent externally</li>
+      <li>No analytics or telemetry data is collected</li>
+      <li>No cookies are set</li>
+      <li>No user accounts are required</li>
+      <li>No third-party services are contacted</li>
+    </ul>
+
+    <h2>How Audio Recording Works</h2>
+    <p>When you record a voice message, the audio is captured using your browser's built-in MediaRecorder API and processed entirely on your device. The audio data exists only in your browser's memory during the recording session. When you click "Attach," the audio file is added directly to your Gmail draft as an attachment. At no point does the audio data leave your browser or get sent to any external server.</p>
+
+    <h2>How Transcription Works</h2>
+    <p>Live transcription is powered by Chrome's built-in Web Speech API (<code>webkitSpeechRecognition</code>). This is a browser-native feature provided by Google as part of Chrome — it is not a third-party service operated by the extension developer. The extension developer has no access to any speech data processed by Chrome's Web Speech API. For information about how Chrome handles speech recognition data, refer to <a href="https://www.google.com/chrome/privacy/" target="_blank">Google Chrome's privacy policy</a>.</p>
+
+    <h2>Permissions</h2>
+    <p>The extension requires the following permissions:</p>
+    <ul>
+      <li><strong>Host permission (<code>mail.google.com</code>)</strong> — Required to inject the recording button and panel into Gmail's compose window. The extension does not read, modify, or access your email content, contacts, or any other Gmail data.</li>
+      <li><strong>Microphone access</strong> — Requested at runtime via the browser's standard permission prompt when you first click "Start Recording." This permission is used solely to capture audio for your voice message. You can revoke it at any time via Chrome's site settings.</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>Gmail Audio Recorder does not store any data. It does not use local storage, cookies, IndexedDB, or any other browser storage mechanism. Audio recordings and transcripts exist only in your browser's volatile memory during an active recording session and are discarded when you close the panel, discard the recording, or attach it to an email.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>Gmail Audio Recorder does not integrate with, communicate with, or send data to any third-party services, APIs, or servers. The extension operates entirely within your browser.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>Gmail Audio Recorder does not collect any data from any user, including children under the age of 13. Since no data is collected, stored, or transmitted, there are no special provisions required under COPPA or similar regulations.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If this privacy policy is updated, the changes will be posted on this page with an updated revision date. Since the extension collects no data, significant changes to this policy are unlikely.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about this privacy policy, you can reach the developer at:</p>
+    <ul>
+      <li>GitHub: <a href="https://github.com/danielcregg/gmail-audio-recorder/issues" target="_blank">Open an issue</a></li>
+    </ul>
+
+    <h2>Open Source</h2>
+    <p>Gmail Audio Recorder is fully open source under the MIT License. You can inspect every line of code to verify these privacy claims yourself at <a href="https://github.com/danielcregg/gmail-audio-recorder" target="_blank">github.com/danielcregg/gmail-audio-recorder</a>.</p>
+
+    <footer>
+      <p><a href="https://danielcregg.is-a.dev/gmail-audio-recorder/">← Back to Gmail Audio Recorder</a></p>
+    </footer>
+  </div>
+</body>
+</html>
