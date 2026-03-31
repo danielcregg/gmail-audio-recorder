@@ -492,7 +492,7 @@
       this._reset();
     }
 
-    _insertTranscriptIntoBody(transcript, filename) {
+    _insertTranscriptIntoBody(transcript, _filename) {
       const editable =
         qs('[role="textbox"][g_editable="true"]', this.compose) ||
         qs(".Am.Al.editable", this.compose) ||

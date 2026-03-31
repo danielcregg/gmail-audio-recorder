@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test & Lint
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run tests with coverage
+        run: npm run test:ci
+
+      - name: Upload coverage artifact
+        if: matrix.node-version == 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+
+  validate-extension:
+    name: Validate Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify manifest.json is valid JSON
+        run: python3 -c "import json; json.load(open('manifest.json'))"
+
+      - name: Verify required files exist
+        run: |
+          for f in manifest.json content.js styles.css icons/icon16.png icons/icon48.png icons/icon128.png LICENSE README.md; do
+            [ -f "$f" ] || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "All required files present."
+
+      - name: Verify icons are valid PNGs
+        run: |
+          for icon in icons/icon16.png icons/icon48.png icons/icon128.png; do
+            magic=$(xxd -p -l 4 "$icon")
+            [ "$magic" = "89504e47" ] || { echo "INVALID PNG: $icon"; exit 1; }
+          done
+          echo "All icons are valid PNGs."
+
+      - name: Package extension ZIP
+        run: |
+          zip -r gmail-audio-recorder.zip manifest.json content.js styles.css icons/ src/
+          echo "Extension packaged: $(du -h gmail-audio-recorder.zip | cut -f1)"
