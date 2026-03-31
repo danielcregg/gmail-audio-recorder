@@ -39,19 +39,19 @@ Record audio, get a live transcript, and attach it all to your email — without
 
 **Gmail Audio Recorder is 100% free, 100% private, with zero limits — forever.**
 
-Every other voice message extension for Gmail either charges a subscription, caps your recordings, or routes your audio through their cloud servers. We don't. Here's how we compare:
+Most voice message extensions for Gmail charge a subscription, cap your recordings, or route your audio through their cloud servers. We don't.
 
-| Feature | **Gmail Audio Recorder** | Vocal | Mote | Beep | telbee |
-|---------|:---:|:---:|:---:|:---:|:---:|
-| **Price** | ✅ Free forever | $9–$20/mo | $49/yr | Free (limited) | $9/mo |
-| **Recording limit** | ✅ Unlimited | 1 min (free) | 30–60 sec (free) | Unknown | 60 min/mo (free) |
-| **Audio stored on** | ✅ Your device only | Their servers | Their servers | Their servers | Their servers |
-| **Live transcription** | ✅ Built-in | Paid tier | Paid tier | ❌ | ❌ |
-| **Attaches real audio file** | ✅ WAV file | MP3 (via cloud) | Link to web player | Link to web player | Link to web player |
-| **Works offline** | ✅ Yes | ❌ | ❌ | ❌ | ❌ |
-| **Open source** | ✅ MIT License | ❌ | ❌ | ❌ | ❌ |
-| **Account required** | ✅ None | Yes | Yes (Google) | Yes | Yes |
-| **Data sent to servers** | ✅ Nothing. Zero. | Audio uploaded | Audio uploaded | Audio uploaded | Audio uploaded |
+| Feature | **Gmail Audio Recorder** | **Typical alternatives** |
+|---------|:---:|:---:|
+| **Price** | ✅ Free forever | $9–$49/yr+ subscriptions |
+| **Recording limit** | ✅ Unlimited | 30 sec – 1 min on free tiers |
+| **Audio stored on** | ✅ Your device only | Their cloud servers |
+| **Live transcription** | ✅ Built-in | Paid tier or unavailable |
+| **Attaches real audio file** | ✅ WAV file | Link to web player |
+| **Works offline** | ✅ Yes | ❌ Requires internet |
+| **Open source** | ✅ MIT License | ❌ Closed source |
+| **Account required** | ✅ None | Sign-up required |
+| **Data sent to servers** | ✅ Nothing. Zero. | Audio uploaded to cloud |
 
 > **The bottom line:** Other tools record your voice, upload it to their servers, and give the recipient a link to a web player — often behind a subscription. We attach a real audio file directly to the email. Your audio never leaves your browser. No accounts, no limits, no cloud, no catch.
 
