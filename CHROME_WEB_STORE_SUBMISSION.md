@@ -111,3 +111,60 @@ https://chrome.google.com/webstore/detail/gmail-audio-recorder/YOUR_EXTENSION_ID
 ```
 
 Replace `YOUR_EXTENSION_ID` with the ID shown in your developer dashboard.
+
+## Step 6 — Set up automatic publishing (CI/CD)
+
+Once your extension is approved, you can enable automatic publishing via GitHub Actions. Every time you push a version tag (e.g. `v1.0.1`), the workflow will run all tests, package the extension, and upload it to the Chrome Web Store.
+
+### Generate Google API credentials
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+2. Create a new project (or select an existing one)
+3. Enable the **Chrome Web Store API**:
+   - Go to **APIs & Services → Library**
+   - Search for "Chrome Web Store API" and enable it
+4. Create OAuth credentials:
+   - Go to **APIs & Services → Credentials**
+   - Click **Create Credentials → OAuth client ID**
+   - Application type: **Web application**
+   - Authorized redirect URIs: `https://developer.chrome.com`
+   - Note the **Client ID** and **Client Secret**
+5. Get a refresh token:
+   - Visit: `https://accounts.google.com/o/oauth2/auth?response_type=code&scope=https://www.googleapis.com/auth/chromewebstore&client_id=YOUR_CLIENT_ID&redirect_uri=urn:ietf:wg:oauth:2.0:oob`
+   - Authorize and copy the code
+   - Exchange it for a refresh token:
+     ```bash
+     curl -X POST https://oauth2.googleapis.com/token \
+       -d "client_id=YOUR_CLIENT_ID" \
+       -d "client_secret=YOUR_CLIENT_SECRET" \
+       -d "code=YOUR_AUTH_CODE" \
+       -d "grant_type=authorization_code" \
+       -d "redirect_uri=urn:ietf:wg:oauth:2.0:oob"
+     ```
+   - The response contains your `refresh_token`
+
+### Add secrets to GitHub
+
+Go to your repo → **Settings → Secrets and variables → Actions** and add:
+
+| Secret name | Value |
+|-------------|-------|
+| `CHROME_EXTENSION_ID` | Your 32-character extension ID from the developer dashboard |
+| `CHROME_CLIENT_ID` | OAuth Client ID from step 4 |
+| `CHROME_CLIENT_SECRET` | OAuth Client Secret from step 4 |
+| `CHROME_REFRESH_TOKEN` | Refresh token from step 5 |
+
+### Deploy a new version
+
+```bash
+# 1. Bump the version in manifest.json
+# 2. Commit the change
+git add manifest.json
+git commit -m "Bump version to 1.0.1"
+
+# 3. Tag and push
+git tag v1.0.1
+git push origin main --tags
+```
+
+The [publish workflow](/.github/workflows/publish.yml) will automatically run tests, package the extension, and upload it to the Chrome Web Store. The store may still require a brief review before the update goes live.
