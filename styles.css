@@ -1,0 +1,341 @@
+/* ── Record Button — right of Send+Schedule group ── */
+.gar-record-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 6px;
+  transition: background 0.15s ease;
+  position: relative;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.gar-record-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.gar-record-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #5f6368;
+  transition: fill 0.15s ease;
+}
+
+.gar-record-btn.gar-recording svg {
+  fill: #d93025;
+  animation: gar-pulse 1.2s ease-in-out infinite;
+}
+
+.gar-record-btn.gar-recording {
+  background: rgba(217, 48, 37, 0.08);
+}
+
+@keyframes gar-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Floating Recording Panel (overlay — no scroll) ── */
+.gar-panel {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  margin-bottom: 4px;
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.gar-panel.gar-visible {
+  display: block;
+}
+
+.gar-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.gar-panel-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gar-panel-title svg {
+  width: 18px;
+  height: 18px;
+  fill: #5f6368;
+}
+
+.gar-panel-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: #5f6368;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
+
+.gar-panel-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* ── Visualizer ── */
+.gar-visualizer-wrap {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gar-visualizer {
+  width: 100%;
+  height: 48px;
+  display: block;
+}
+
+.gar-timer {
+  font-size: 13px;
+  color: #5f6368;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  margin-top: 6px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.gar-timer.gar-recording-active {
+  color: #d93025;
+}
+
+/* ── Live Transcript Area ── */
+.gar-transcript-wrap {
+  margin-bottom: 12px;
+}
+
+.gar-transcript-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.gar-transcript {
+  background: #f8f9fa;
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #202124;
+  line-height: 1.5;
+  min-height: 40px;
+  max-height: 100px;
+  overflow-y: auto;
+  font-family: Roboto, Arial, sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.gar-transcript:empty::before {
+  content: "Transcript will appear here as you speak...";
+  color: #9aa0a6;
+  font-style: italic;
+}
+
+.gar-transcript .gar-interim {
+  color: #9aa0a6;
+}
+
+.gar-transcript-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.gar-transcript-toggle label {
+  font-size: 12px;
+  color: #5f6368;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gar-transcript-toggle input[type="checkbox"] {
+  accent-color: #1a73e8;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Controls ── */
+.gar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gar-ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gar-ctrl-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.gar-btn-record {
+  background: #d93025;
+  color: #fff;
+}
+.gar-btn-record svg { fill: #fff; }
+
+.gar-btn-record:hover {
+  background: #c5221f;
+  box-shadow: 0 1px 3px rgba(217, 48, 37, 0.3);
+}
+
+.gar-btn-stop {
+  background: #5f6368;
+  color: #fff;
+}
+.gar-btn-stop svg { fill: #fff; }
+
+.gar-btn-stop:hover {
+  background: #4a4e51;
+}
+
+.gar-btn-play {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+.gar-btn-play svg { fill: #1a73e8; }
+
+.gar-btn-play:hover {
+  background: #d2e3fc;
+}
+
+.gar-btn-attach {
+  background: #1a73e8;
+  color: #fff;
+}
+.gar-btn-attach svg { fill: #fff; }
+
+.gar-btn-attach:hover {
+  background: #1765cc;
+  box-shadow: 0 1px 3px rgba(26, 115, 232, 0.3);
+}
+
+.gar-btn-discard {
+  background: transparent;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+}
+.gar-btn-discard svg { fill: #5f6368; }
+
+.gar-btn-discard:hover {
+  background: #f1f3f4;
+}
+
+/* ── State visibility ── */
+.gar-state-idle .gar-post-controls,
+.gar-state-idle .gar-rec-controls {
+  display: none !important;
+}
+
+.gar-state-recording .gar-pre-controls,
+.gar-state-recording .gar-post-controls {
+  display: none !important;
+}
+
+.gar-state-done .gar-pre-controls,
+.gar-state-done .gar-rec-controls {
+  display: none !important;
+}
+
+/* Hide transcript area until recording starts */
+.gar-state-idle .gar-transcript-wrap {
+  display: none;
+}
+
+/* ── Attachment chip ── */
+.gar-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f0fe;
+  border: 1px solid #d2e3fc;
+  border-radius: 16px;
+  padding: 4px 12px 4px 8px;
+  font-size: 12px;
+  color: #1a73e8;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  margin: 4px;
+  cursor: default;
+}
+
+.gar-chip svg {
+  width: 14px;
+  height: 14px;
+  fill: #1a73e8;
+}
+
+.gar-chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: #1a73e8;
+  font-size: 14px;
+  padding: 0;
+  margin-left: 2px;
+}
+
+.gar-chip-remove:hover {
+  background: rgba(26, 115, 232, 0.12);
+}
