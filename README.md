@@ -102,7 +102,7 @@ gmail-audio-recorder/
 ├── store-assets/          # Chrome Web Store promotional images
 ├── .github/workflows/
 │   └── ci.yml             # GitHub Actions CI (test + lint on Node 18/20/22)
-└── CHROME_WEB_STORE_SUBMISSION.md
+└── CLAUDE.md
 ```
 
 ## 🧪 Testing
@@ -150,7 +150,7 @@ git tag v1.0.1
 git push origin v1.0.1
 ```
 
-The workflow runs the full test suite first — if all 88 tests pass, it packages the extension and uploads it to the Chrome Web Store automatically. See [CHROME_WEB_STORE_SUBMISSION.md](CHROME_WEB_STORE_SUBMISSION.md) for the one-time setup of Google API credentials.
+The workflow runs the full test suite first — if all 88 tests pass, it packages the extension and uploads it to the Chrome Web Store automatically.
 
 ## 🔐 Privacy & Permissions
 
