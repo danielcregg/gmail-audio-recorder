@@ -9,7 +9,7 @@
 [![Tests](https://img.shields.io/badge/tests-88%20passed-brightgreen?logo=jest)](https://github.com/danielcregg/gmail-audio-recorder/actions)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen?logo=jest)](https://github.com/danielcregg/gmail-audio-recorder/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/danielcregg/gmail-audio-recorder/blob/main/LICENSE)
-[![Chrome Web Store](https://img.shields.io/badge/chrome-web%20store-4285f4?logo=googlechrome&logoColor=white)](https://github.com/danielcregg/gmail-audio-recorder#install)
+[![Chrome Web Store](https://img.shields.io/badge/chrome-web%20store-4285f4?logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/gmail-audio-recorder/olnipfdionohacjlccfpkpjooffennfp)
 [![Manifest V3](https://img.shields.io/badge/manifest-v3-4285f4?logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/danielcregg/gmail-audio-recorder/pulls)
@@ -17,7 +17,7 @@
 
 Record audio, get a live transcript, and attach it all to your email — without ever leaving the compose window.
 
-[**Install from Chrome Web Store**](#install) · [**Landing Page**](https://danielcregg.is-a.dev/gmail-audio-recorder/) · [**Report Bug**](https://github.com/danielcregg/gmail-audio-recorder/issues)
+[**Install from Chrome Web Store**](https://chrome.google.com/webstore/detail/gmail-audio-recorder/olnipfdionohacjlccfpkpjooffennfp) · [**Landing Page**](https://danielcregg.is-a.dev/gmail-audio-recorder/) · [**Report Bug**](https://github.com/danielcregg/gmail-audio-recorder/issues)
 
 ---
 
@@ -59,7 +59,9 @@ Most voice message extensions for Gmail charge a subscription, cap your recordin
 
 ### Chrome Web Store (recommended)
 
-> **Coming soon** — the extension is currently under review.
+[![Add to Chrome](https://img.shields.io/badge/Add%20to-Chrome-4285f4?logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/gmail-audio-recorder/olnipfdionohacjlccfpkpjooffennfp)
+
+Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/gmail-audio-recorder/olnipfdionohacjlccfpkpjooffennfp) — one click and you're done.
 
 ### Manual install
 

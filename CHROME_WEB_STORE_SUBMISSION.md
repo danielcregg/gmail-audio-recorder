@@ -102,15 +102,16 @@ Upload the images from the `store-assets/` folder:
 2. Click **"Submit for review"**
 3. Review typically takes **1–3 business days**
 
-## Step 5 — After approval
+## Step 5 — After approval ✅
 
-Once approved, update the "Add to Chrome" links on the GitHub Pages landing page and README with your actual Chrome Web Store URL:
+Extension published with ID: `olnipfdionohacjlccfpkpjooffennfp`
 
+Chrome Web Store URL:
 ```
-https://chrome.google.com/webstore/detail/gmail-audio-recorder/YOUR_EXTENSION_ID
+https://chrome.google.com/webstore/detail/gmail-audio-recorder/olnipfdionohacjlccfpkpjooffennfp
 ```
 
-Replace `YOUR_EXTENSION_ID` with the ID shown in your developer dashboard.
+Links updated in README.md and docs/index.html.
 
 ## Step 6 — Set up automatic publishing (CI/CD)
 
